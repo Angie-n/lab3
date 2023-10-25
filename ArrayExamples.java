@@ -31,12 +31,13 @@ public class ArrayExamples {
       if(num < lowest) { lowest = num; }
     }
     double sum = 0;
+    int numNotIncluded = 0;
     for(double num: arr) {
       if(num != lowest) { sum += num; }
+      else numNotIncluded++;
     }
-    return sum / (arr.length - 1);
+    if(sum == 0 && arr.length == numNotIncluded) return 0.0;
+    return sum / (arr.length - numNotIncluded);
   }
-
-
 }
 
